@@ -28,7 +28,7 @@
             [gridStatus addObject:@"1"];
         }
         
-        player = 1;
+        player = 1; //initial player - turtle
     }
     return self;
 }
@@ -61,17 +61,11 @@
             //[sprite runAction:[SKAction repeatActionForever:action]];
             
             [self addChild:sprite];
-            
-            [self checkWinCondition];
         }
        
         
         
     }
-}
-
--(void)checkWinCondition{
-    
 }
 
 -(BOOL)checkIfValid:(CGPoint) location{
