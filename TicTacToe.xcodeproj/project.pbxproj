@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		107D52141938D12D0047BE97 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 107D52131938D12D0047BE97 /* bg.png */; };
 		107D521C1938EE620047BE97 /* turtle.png in Resources */ = {isa = PBXBuildFile; fileRef = 107D521B1938EE620047BE97 /* turtle.png */; };
-		107D521E1938EFF80047BE97 /* rabit.png in Resources */ = {isa = PBXBuildFile; fileRef = 107D521D1938EFF80047BE97 /* rabit.png */; };
+		107D52201938F2C30047BE97 /* rabbit.png in Resources */ = {isa = PBXBuildFile; fileRef = 107D521F1938F2C30047BE97 /* rabbit.png */; };
 		10E39D9C1937BD420064A134 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E39D9B1937BD420064A134 /* Foundation.framework */; };
 		10E39D9E1937BD420064A134 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E39D9D1937BD420064A134 /* CoreGraphics.framework */; };
 		10E39DA01937BD420064A134 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E39D9F1937BD420064A134 /* UIKit.framework */; };
@@ -41,7 +41,7 @@
 /* Begin PBXFileReference section */
 		107D52131938D12D0047BE97 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		107D521B1938EE620047BE97 /* turtle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turtle.png; sourceTree = "<group>"; };
-		107D521D1938EFF80047BE97 /* rabit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rabit.png; sourceTree = "<group>"; };
+		107D521F1938F2C30047BE97 /* rabbit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rabbit.png; sourceTree = "<group>"; };
 		10E39D981937BD420064A134 /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10E39D9B1937BD420064A134 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		10E39D9D1937BD420064A134 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -96,7 +96,7 @@
 			children = (
 				107D52131938D12D0047BE97 /* bg.png */,
 				107D521B1938EE620047BE97 /* turtle.png */,
-				107D521D1938EFF80047BE97 /* rabit.png */,
+				107D521F1938F2C30047BE97 /* rabbit.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -258,8 +258,8 @@
 				10E39DA81937BD420064A134 /* InfoPlist.strings in Resources */,
 				10E39DBB1937BD420064A134 /* Images.xcassets in Resources */,
 				10E39DB11937BD420064A134 /* Main.storyboard in Resources */,
-				107D521E1938EFF80047BE97 /* rabit.png in Resources */,
 				107D521C1938EE620047BE97 /* turtle.png in Resources */,
+				107D52201938F2C30047BE97 /* rabbit.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

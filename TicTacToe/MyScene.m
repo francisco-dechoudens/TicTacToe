@@ -49,7 +49,7 @@
                 player = 0;
             }
             else{
-                sprite = [SKSpriteNode spriteNodeWithImageNamed:@"rabit"];
+                sprite = [SKSpriteNode spriteNodeWithImageNamed:@"rabbit"];
                 sprite.scale = 0.18;
                 player = 1;
             }
@@ -61,11 +61,17 @@
             //[sprite runAction:[SKAction repeatActionForever:action]];
             
             [self addChild:sprite];
+            
+            [self checkWinCondition];
         }
        
         
         
     }
+}
+
+-(void)checkWinCondition{
+    
 }
 
 -(BOOL)checkIfValid:(CGPoint) location{
