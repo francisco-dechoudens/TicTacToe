@@ -19,26 +19,31 @@
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
+        [self startNewGame];
         
-        SKSpriteNode *bg = [SKSpriteNode spriteNodeWithImageNamed:@"bg"];
-        bg.position = CGPointMake(self.size.width/2, self.size.height/2);
-        
-        [self addChild:bg];
-        
-        gridStatus = [[NSMutableArray alloc]init];
-        playersTokens = [NSMutableArray new];
-        NSMutableArray *emptyToken = [NSMutableArray new];
-        
-        for (int i = 0; i<9; i++) {
-            [gridStatus addObject:@"1"];
-            [emptyToken addObject:@0];
-        }
-        [playersTokens addObject:emptyToken];
-        [playersTokens addObject:emptyToken];
-        
-        player = 1; //initial player - turtle
     }
     return self;
+}
+
+-(void)startNewGame {
+    //all your scene configs here
+    SKSpriteNode *bg = [SKSpriteNode spriteNodeWithImageNamed:@"bg"];
+    bg.position = CGPointMake(self.size.width/2, self.size.height/2);
+    
+    [self addChild:bg];
+    
+    gridStatus = [[NSMutableArray alloc]init];
+    playersTokens = [NSMutableArray new];
+    NSMutableArray *emptyToken = [NSMutableArray new];
+    
+    for (int i = 0; i<9; i++) {
+        [gridStatus addObject:@"1"];
+        [emptyToken addObject:@0];
+    }
+    [playersTokens addObject:emptyToken];
+    [playersTokens addObject:emptyToken];
+    
+    player = 1; //initial player - turtle
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -58,7 +63,7 @@
                 sprite.name = positionName;
                 [self addChild:sprite];
                 if ([self checkWithCondition]) {
-                    self.userInteractionEnabled = NO;
+             
                     [self enumerateChildNodesWithName:name1 usingBlock:^(SKNode *node, BOOL *stop) {
                         SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
                         [node runAction:[SKAction repeatActionForever:action]];
@@ -74,6 +79,12 @@
                         [node runAction:[SKAction repeatActionForever:action]];
                         
                     }];
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"The winner is:"
+                                                                    message:@"The Turtle!!!!"
+                                                                   delegate:self
+                                                          cancelButtonTitle:@"Begin"
+                                                          otherButtonTitles:nil];
+                    [alert show];
                 }
                 player = 0;
             }
@@ -84,7 +95,7 @@
                 sprite.name = positionName;
                 [self addChild:sprite];
                 if ([self checkWithCondition]) {
-                    self.userInteractionEnabled = NO;
+               
                     [self enumerateChildNodesWithName:name1 usingBlock:^(SKNode *node, BOOL *stop) {
                         SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
                         [node runAction:[SKAction repeatActionForever:action]];
@@ -100,12 +111,24 @@
                         [node runAction:[SKAction repeatActionForever:action]];
                         
                     }];
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"The winner is:"
+                                                                    message:@"The Rabbit!!!!"
+                                                                   delegate:self
+                                                          cancelButtonTitle:@"Begin"
+                                                          otherButtonTitles:nil];
+                    [alert show];
                 }
                 player = 1;
             }
             
         }
     }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [self removeAllChildren];
+    [self startNewGame];
 }
 
 -(BOOL)checkWithCondition{
